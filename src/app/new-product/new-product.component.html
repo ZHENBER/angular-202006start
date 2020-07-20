@@ -1,0 +1,25 @@
+<div class="row" style="font-weight:bolder;border-bottom:1px solid lightgray">
+	<div class="col-3">Title</div>
+	<div class="col">Product Type</div>
+	<div class="col">Price</div>
+	<div class="col"></div>
+</div>
+<div class="row" style="border-bottom:1px solid lightgray" *ngIf="showNewProductPanel">
+	<div class="col-3">
+		<input type="text" [(ngModel)]="newProduct.title" />
+  </div>
+		<div class="col">
+			<select [(ngModel)]="newProduct.productType">
+          <option value="Mobile">Mobile</option>
+          <option value="Laptop">Laptop</option>
+    </select>
+		</div>
+		<div class="col">
+			<input type="number" [(ngModel)]="newProduct.price"/>
+  </div>
+
+			<div class="col">
+				<button class="btn btn-primary"
+          (click)="onNewProductClick()">Add</button>
+			</div>
+		</div>

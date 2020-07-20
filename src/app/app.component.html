@@ -1,0 +1,28 @@
+<!--<hello name="{{ user.name }}"></hello> -->
+<!--<h1>{{ user.name }}</h1>
+
+<ul>
+	<li *ngFor="let num of numberArray">{{num}}</li>
+</ul>
+<ul>
+	<li *ngFor="let user of usersArray" (click)="showAddress(user)">{{user.name}}</li>
+</ul>
+
+forDebug
+{{user}} {{user | json}}
+<p>
+	Start editing to see some magic happen :)
+</p>-->
+<app-header></app-header>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">Welcome to Electronic-Shop</h1>
+    <p class="lead">THE ONLINE MEGASTORE</p>
+    <hr class="my-2">
+  </div>
+</div>
+<div class="container-fluid">
+  <!-- <app-products>Loading</app-products> -->
+  <router-outlet></router-outlet>
+</div>
