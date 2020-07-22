@@ -10,11 +10,8 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {}
-
-
-    onLoadProducts() {
+  onLoadProducts() {
     // complex calculation
-
-    this.router.navigate(['/products']); // use it like [routerLink]="['/products']"
+    this.router.navigate(["/products"]); // use it like [routerLink]="['/products']"
   }
 }

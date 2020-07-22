@@ -1,28 +1,9 @@
 import { Injectable } from '@angular/core';
+import { MockData } from "./../mock-data/mock-product-data"; //add
 
 @Injectable()
-
 export class ProductService {
-  products = [
-      {
-        id: 11,
-        title: "OPPO F5 Youth (Gold, 32 GB)",
-        modelName: "F5 Youth",
-        color: "Gold",
-        productType: "Mobile",
-        brand: "OPPO",
-        price: 16990
-      },
-      {
-        id: 12,
-        title: "Dell Inspiron 7000",
-        modelName: "Inspiron",
-        color: "Gray",
-        productType: "Laptop",
-        brand: "DELL",
-        price: 59990
-      }
-    ];
+  products = MockData.Products; //add
 
   addProduct(newProduct){
     let idArray = this.products.map(x=>x.id);
@@ -39,4 +20,5 @@ export class ProductService {
     const filterProducts = this.products.filter(x=>x.id === parseInt(id));
     return filterProducts.length === 0 ? undefined : filterProducts[0]
   }
+  
 }

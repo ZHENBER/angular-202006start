@@ -3,7 +3,7 @@ export class MockData {
     public static Products: Product[] = [
         {
             'id': 11,
-            'title': 'OPPO F5 Youth (Gold, 32 GB)',
+            'title': 'OPPO F5 Youth',
             'modelName': 'F5 Youth',
             'color': 'Gold',
             'productType': 'Mobile',

@@ -1,4 +1,4 @@
-import { MockData } from "./../mock-data/mock-product-data"; //add
+// import { MockData } from "./../mock-data/mock-product-data"; //add
 import { Component, OnInit, Input } from "@angular/core";
 import { Product } from "../models/product"; //add
 import { ProductService } from "./../service/product.service"; // <<-- import service
@@ -18,7 +18,7 @@ export class ProductsComponent implements OnInit {
   // New Property
   showNewProductPanel = false;
   constructor(private productService: ProductService) {
-    this.products = MockData.Products; //add
+    // this.products = MockData.Products; //add
     this.products = productService.products;
   }
   ngOnInit() {}
