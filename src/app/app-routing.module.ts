@@ -4,14 +4,20 @@ import { HomeComponent } from "./home/home.component";
 import { ProductsComponent } from "./products/products.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { ProductDetailComponent } from "./product-detail/product-detail.component";
+import { NewProductComponent } from "./new-product/new-product.component";
 
 const appRoutes: Routes = [
-  { path: "", component: HomeComponent }, // [url]/home
-  { path: "home", component: HomeComponent }, // [url]/home
-  { path: "products", component: ProductsComponent }, // [url]/products
-  { path:'products/:id', component: ProductDetailComponent },  // [url]/products/1
-  { path: "**", component: PageNotFoundComponent, pathMatch: "full" } // no any route matched
+  { path:'', redirectTo: 'home', pathMatch: 'full' }, // [url]/home
+  { path:'home', component: HomeComponent }, // [url]/home
+  { path:'products', children: [
+    {path: '', component: ProductsComponent, pathMatch: 'full'}, // [url]/products
+    { path:':id', component: ProductDetailComponent },  // [url]/products/1
+    { path:':id/edit', component: NewProductComponent },  // [url]/products/1/edit
+  ] }, 
+  { path:'404', component: PageNotFoundComponent },  // [url]/products/1
+  { path: '**', redirectTo: '404' } // no any route matched 
 ];
+
 
 @NgModule({
   imports: [

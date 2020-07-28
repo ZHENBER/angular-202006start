@@ -2,11 +2,12 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Product } from "../models/product"; //add
 import { ProductService } from "./../service/product.service"; // <<-- import service
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-products",
   templateUrl: "./products.component.html",
-  styleUrls: ["./products.component.css"],
+  styleUrls: ["./products.component.css"]
   // providers: [ProductService] // <-- prodvide this service for this component
 })
 export class ProductsComponent implements OnInit {
@@ -17,11 +18,11 @@ export class ProductsComponent implements OnInit {
   newProduct = { title: "", productType: "", price: 0 };
   // New Property
   showNewProductPanel = false;
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private router: Router) {}
+  ngOnInit() {
     // this.products = MockData.Products; //add
-    this.products = productService.products;
+    this.products = this.productService.products;
   }
-  ngOnInit() {}
 
   // Using *ngIf to output data conditionally
   onNewProductClick() {
@@ -35,6 +36,10 @@ export class ProductsComponent implements OnInit {
     this.productService.addProduct(newProduct);
     // this.products.push(newProduct);
   }
+  onNewProduct() {
+    this.router.navigate(["/products", "new", "edit"]);
+  }
+
   // Remove selected item from products
   onDeletedItem(product: Product) {
     console.log("in app component: ", product);

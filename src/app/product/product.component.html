@@ -30,10 +30,17 @@
 			</div>
 		</div>
 	</div>
-	<div class="col">
-		<button type="button" class="btn btn-primary" (click)="showDetail()" >Detail</button>
-
-		<button class="btn btn-danger"
-              (click)="onRemove(product)">Remove</button>
+	<div class="card-footer text-muted">
+		<div class="row">
+			<div class="col-3">
+				<button type="button" class="btn btn-primary" (click)="showDetail()">Detail</button>
+			</div>
+			<div class="col-5">
+				<button type="button" class="btn btn-primary" (click)="showEdit()">Edit</button>
+			</div>
+			<div class="col">
+				<button type="button" class="btn btn-danger" (click)="onRemove(product)">Remove</button>
+			</div>
+		</div>
 	</div>
 </div>
